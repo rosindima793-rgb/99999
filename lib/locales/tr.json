@@ -1,0 +1,997 @@
+{
+  "home": {
+    "title": "OCTAAzyCube",
+    "subtitle": "Küplerin ağlayıp şaka yaptığı yer!",
+    "balance": "Bakiye:",
+    "connectWallet": "MetaMask'ı Bağla",
+    "walletNotDetected": "MetaMask bulunamadı. MetaMask'ı yükleyin"
+  },
+  "sections": {
+    "bridge": {
+      "title": "Köprü (Küpü Geri Getir!)",
+      "description": "OCTAA tokenlarınızı ve CrazyOctagon NFT'lerinizi Monad Testnet ve Solana arasında transfer edin. Hızlı, güvenli ve minimum ücretlerle. Gerçek koleksiyoncular için cross-chain!",
+      "button": "NFT Köprüsü",
+      "guide": {
+        "title": "🪄 Diriltme Rehberi",
+        "intro": "OpenSea veya Magic Eden'deki güncel fiyatının 20%'si kadar OCTAA ücreti ödeyerek bir küpü mezarlıktan geri getirebilirsiniz.",
+        "fee": "Ücret son piyasa fiyatına göre otomatik hesaplanır ve kalıcı olarak yakılır.",
+        "requirement": "Diriltme için en az 1 yıldıza sahip 2 NFT seçin.",
+        "rarity": "Yıldız derecelendirmesi: 1 ⭐ — Yaygın, 2 ⭐ — Az Bulunan, 3 ⭐ — Nadir, 4 ⭐ — Epik, 5 ⭐ — Efsanevi.",
+        "penalty": "Başarılı diriltme sonrası seçilen her NFT 1 yıldız kaybeder.",
+        "step1": "1. %20 ücret için OCTAA harcamasını onayla.",
+        "step2": "2. Köprü işlemini onayla — NFT anında cüzdanınıza döner.",
+        "note": "Sadece 5,000 küp mevcuttur, sayıları asla değişmez. Yakılan OCTAA ölü cüzdana gider; kimse kurtaramaz."
+      }
+    },
+    "burn": {
+      "title": "NFT Yak (Küpü Izgara Yap!)",
+      "description": "NFT yak ve OCTAA token kazan! Alevli ızgarada çığlık atan küpler: \"Anneme sevdiğimi söyle!\"",
+      "button": "NFT Yak",
+      "feeBox": {
+        "title": "🔥 Yakma Ücreti ve Adımlar",
+        "line1": "• Yakma ücreti küp içindeki kilitli OCTAA'nın <1>%10</1>'idir.",
+        "line2": "• Yakma <1>üç onay</1> gerektirir:",
+        "step1": "1. Sözleşmeye NFT'nizi taşıma izni verin.",
+        "step2": "2. Kilitli coinlerin %10'u için OCTAA harcamasına izin verin.",
+        "step3": "3. Son işlemi onayla — küp yanar, OCTAA sana geçer.",
+        "note": "Başlamadan önce cüzdanında ücret için yeterli OCTAA olduğundan emin ol.",
+        "guide": {
+          "title": "🔥 Yakma Rehberi Buraya tıkla",
+          "intro": "<div class='text-lg font-bold text-cyan-400 mb-2'>Bu oyun tamamen Monad Testnet blockchain üzerine inşa edilmiştir. Tüm oyun eylemleri akıllı sözleşmeler tarafından işlenir, web sitesi sadece bilgi görüntüleme görevi görür.</div>Yakmadan önce, çıkarılan OCTAA'yı açmak için MUTLAKA ping yap (her 7 günde bir).",
+          "loss": "Yakma sonrası NFT kalıcı olarak mezarlığa gönderilir. OCTAA ödüller bölümünden alınabilir.",
+          "step1": "1. Sözleşmeye NFT'ni taşıma izni ver.",
+          "step2": "2. Kilitli coinlerin %10'u için OCTAA harcamasına izin ver.",
+          "step3": "3. Son işlemi onayla — küp yanar, OCTAA sana geçer.",
+          "timing": "OCTAA seçilen gecikmeden (30m / 120m / 480m) sonra gelir. Bu süre boyunca küp gri olur (cooldown).",
+          "note": "Örnek: 10.000 OCTAA kilitli → ücret 1.000 OCTAA (%10). Daha uzun gecikme = daha küçük havuz payı.",
+          "pingLock": "Ping sırasında OCTAA cüzdana gitmez — NFT içinde kilitli kalır. Sadece yakarak çekilebilir.",
+          "bridgeNote": "Mezarlıktan NFT'yi 'Köprü' bölümünde dirilt. Küp sayısı 9700 ile sınırlı ve asla değişmez. Her eylemde yakılan OCTAA sonsuza dek ölü cüzdana gider — kimse geri alamaz.",
+          "sellOCTA": "OCTA Sat: <a>Camelot Exchange</a>",
+          "fees": "🔹 OCTAA Token Ücretleri • Transferlerde %3 ücret — oyun sözleşmesine gider • DEX satışlarında %10 ücret — oyun sözleşmesine gider • DEX alımlarında %0 ücret — alırken ücret yok • Tüm ücretler oyun ekosistemini ve ödül havuzunu destekler",
+          "contractAddress": "OCTAA Token Sözleşmesi: 0xBb526D657Cc1Ba772469A6EC96AcB2ed9D2A93e5"
+        }
+      },
+      "noNFTsDescription": "Yakacak OCTAAzyCube NFT'niz yok"
+    },
+    "claim": {
+      "title": "Talep Et (OCTAA Nerede?)",
+      "description": "Kocaman üzgün gözlü bir küp bağırır: \"Beni talep et ve OCTAA'ını al!\"",
+      "button": "Talep Et",
+      "processing": "İŞLENİYOR...",
+      "claimReward": "TALEP ET",
+      "waitingForWallet": "Cüzdan onayı bekleniyor...",
+      "processingClaim": "Talep işleniyor...",
+      "noRewardsTitle": "Talep edilecek ödül yok",
+      "noRewardsDescription": "Önce ödül kazanmak için NFT yakın!",
+      "delayInfoTitle": "💡 Ödül gecikmeleri olabilir:",
+      "delayReason1": "Blockchain onayları (3-5 dakika)",
+      "delayReason2": "Ağ tıkanıklığı",
+      "delayReason3": "İndeksleme gecikmeleri",
+      "delayNote": "Yakın zamanda NFT yaktıysanız, birkaç dakika bekleyin ve sayfayı yenileyin.",
+      "blockedTitle": "Sözleşme ile Senkronizasyon",
+      "blockedDescription": "Blockchain senkronizasyonu için 4 dakika bekleyin. Bu, doğru ödül verilerini sağlar.",
+      "timeRemaining": "Kalan Süre",
+      "blockedNote": "Beklerken diğer bölümleri kullanabilirsiniz."
+    },
+    "stats": {
+      "title": "İstatistikler (Gözyaşı ve Acı Sayacı)",
+      "description": "Kaç NFT yakıldı, mezarlıktan döndü ve havuzda ne kadar OCTAA var gösterir",
+      "button": "İstatistikleri Gör",
+      "analytics": "Analitik",
+      "yourNFTs": "NFT'leriniz",
+      "bridgeNFT": "Köprü NFT"
+    },
+    "ping": {
+      "title": "NFT Ping",
+      "description": "OCTAA token kazanmak için NFT'nizi her 24 saatte bir pinleyin! Tutarlı ping ile bonusunuz büyür.",
+      "connectWallet": "Küplerinizi görmek için cüzdan bağlayın",
+      "noNFTs": "OCTAAzyCube NFT bulunamadı.",
+      "sentFor": "Ping gönderildi",
+      "error": "Ping hatası",
+      "interval": "Ping Aralığı: 10 gün",
+      "bonusGrowth": "Bonus her 10 günde +2.7% büyür",
+      "maxBonus": "Maksimum bonus: +97.2%",
+      "penaltyReset": "Ping kaçır = bonus -50%'a sıfırlanır",
+      "activate": "Aktifleştir",
+      "pingNow": "Şimdi Ping",
+      "cooldown": "Bekleme",
+      "ready": "Hazır",
+      "button": "Ping",
+      "readyToPing": "Ping Hazır",
+      "waitingForWallet": "Cüzdan onayı bekleniyor...",
+      "processingPing": "Ping işleniyor...",
+      "accumulated": "Birikti",
+      "nextPing": "Sonraki Ping",
+      "live": "Canlı",
+      "basePerHour": "Temel/saat",
+      "rarity": "Nadirlik",
+      "streak": "Seri",
+      "penalty": "Ceza",
+      "totalBonus": "Toplam Bonus",
+      "pending": "Beklemede",
+      "lockedOCTAA": "Kilitli OCTAA",
+      "status": "Durum",
+      "active": "Aktif",
+      "basePerHour": "Temel/saat",
+      "rarity": "Nadir",
+      "streak": "Seri",
+      "penalty": "Ceza",
+      "totalBonus": "Toplam Bonus",
+      "pending": "Beklemede",
+      "lockedCRAA": "Kilitli OCTAA",
+      "status": "Durum",
+      "active": "Aktif"
+    },
+    "graveyard": {
+      "title": "Mezarlık",
+      "description": "Yakılmış küplerinizi görün, yas tutun ve OCTAA talep edin.",
+      "button": "Mezarlığa Git",
+      "phrases": [
+        "Burada neden bu kadar karanlık… ☠️",
+        "Üşüyorum… 🥶",
+        "O ışık mı? 💀",
+        "Hiç pişman değilim! 🔥",
+        "Külden küle…",
+        "Anneme iyi olduğumu söyle!",
+        "Burası oldukça rahat… belki?"
+      ],
+      "loading": "Mezarlıktan NFT'leriniz yükleniyor...",
+      "empty": {
+        "title": "MEZARLIK BOŞ",
+        "description": "Yakılmış küp bulunamadı."
+      },
+      "showingFirst": "İlk 20 küp gösteriliyor. Toplam: {count}"
+    },
+    "game": {
+      "title": "3D Küp Oyunu",
+      "description": "Açık çılgın dünyalı, inanılmaz fizik ve oynanışlı Minecraft tarzı interaktif oyun! YAKINDA!",
+      "button": "Oyna"
+    },
+    "breed": {
+      "title": "Genetik Füzyon Laboratuvarı 🧬",
+      "description": "İki örneğin DNA'sını bilimsel olarak birleştirerek kriyojenik odadan birini dirilt! Bilim mucizeler yaratır! 🔬⚗️",
+      "button": "Deneyi Başlat",
+      "feeNotice": "Araştırma maliyeti: %40 (%10 CRAA + %30 OCTAA) pazar minimum örnek fiyatından",
+      "cooldown": "⏳ İnkübasyon süresi:",
+      "needTwoNfts": "Deney için tam olarak 2 örnek seçmeniz gerekiyor",
+      "selectGender": "Örnek Türü Seçin",
+      "male": "Alfa Örneği",
+      "female": "Beta Örneği",
+      "genderRequired": "Başarılı mutasyon için farklı türde örnekler gerekli",
+      "waitingForWallet": "Laboratuvar erişimi bekleniyor...",
+      "processingBreeding": "Genetik deney gerçekleştiriliyor...",
+      "graveyardCooldown": "Kriyojenik oda stabilizasyon sürecinde",
+      "graveyardCooldownDesc": "En az bir örneğin kriyojenik koruma sürecini tamamlamasını bekleyin",
+      "graveyardReady": "Kriyojenik oda deneyler için hazır",
+      "graveyardEmpty": "Kriyojenik odada örnek yok",
+      "graveyardEmptyDesc": "Kriyojenik oda boş. Deneyleri etkinleştirmek için önce bazı örnekleri odaya yerleştirin.",
+      "timeUntilReady": "Örnek hazır olana kadar süre:",
+      "selectNft": "Örnek Seç",
+      "selectedNft": "Seçilen Örnek",
+      "breeding": "Mutasyon gerçekleştiriliyor...",
+      "breedNfts": "Deney Gerçekleştir",
+      "returnToHome": "Ana Laboratuvara Dön",
+      "connectWallet": "Laboratuvar Erişimi Bağla",
+      "connectWalletDesc": "Örneklerinizi görüntülemek ve deneyler yapmak için laboratuvar erişimini bağlayın",
+      "connectWalletButton": "Laboratuvar Erişimi Edinin",
+      "errorLoadingNfts": "Örnek Yükleme Hatası",
+      "loadingNfts": "Örnekler Yükleniyor...",
+      "loadingNftsDesc": "CrazyCube örnek koleksiyonunuz alınıyor",
+      "noNftsFound": "Örnek Bulunamadı",
+      "noNftsFoundDesc": "Deney yapmak için CrazyCube örneğiniz yok",
+      "goToCollection": "Koleksiyona Git",
+      "selectNftsForBreeding": "Deney için 2 Örnek Seçin",
+      "loadingGraveyardStatus": "Kriyojenik oda durumu yükleniyor...",
+      "insufficientCra": "Yetersiz Araştırma Fonu",
+      "needCraToBreed": "Deney için {amount} OCTAA gerekiyor",
+      "approveCra": "Araştırma Fonunu Onayla",
+      "approveCraDesc": "İlk işlem: laboratuvar fon erişim izni verin",
+      "approvalConfirmed": "Yetkilendirme onaylandı",
+      "craAllowanceSet": "Fon erişim izni ayarlandı",
+      "confirmBreeding": "Genetik deneyi onayla",
+      "signBreedingTransaction": "Mutasyon protokolünü imzala",
+      "breedingCanceled": "Deney iptal edildi",
+      "transactionRejected": "Protokol reddedildi",
+      "breedingSuccessful": "Mutasyon Başarılı! 🧬⚡",
+      "txConfirmed": "Protokol onaylandı: {hash}...",
+      "transactionError": "Laboratuvar sistem hatası",
+      "inactiveNftSelected": "Pasif örnek seçildi",
+      "nftNoStarsLeft": "Örnek #{id} enerjisi kalmadı ve deney için kullanılamaz.",
+      "maximumSelectionReached": "Maksimum seçim sayısına ulaşıldı",
+      "canOnlySelectTwoNfts": "Deney için sadece 2 örnek seçebilirsiniz",
+      "invalidSelection": "Geçersiz seçim",
+      "mustSelectExactlyTwoNfts": "Mutasyon için tam olarak 2 örnek seçmelisiniz",
+      "walletNotConnected": "Laboratuvar erişimi bağlı değil",
+      "pleaseConnectWalletFirst": "Lütfen önce laboratuvar erişimini bağlayın",
+      "selectedNftsNoStars": "Seçilen örneklerin enerjisi kalmadı! Enerjili aktif örnekler seçin.",
+      "cannotBreedSelectedNfts": "Seçilen örneklerle deney yapılamaz. Gereksinimleri kontrol edin.",
+      "breedYourCubes": "Örneklerinizle Deney Yapın",
+      "select2NftsToCreate": "Kriyojenik odadan birini diriltmek için 2 örnek seçin",
+      "breedingCost": "Deney Maliyeti",
+      "yourBalance": "Araştırma Fonunuz",
+      "graveyardSize": "Mezarlık Boyutu",
+      "selectedParents": "Seçilen Ebeveynler",
+      "breedSelectedNfts": "Seçilen NFT'leri Çiftleştir",
+      "guide": {
+          "title": "🪄 Çiftleştirme Rehberi Buraya tıklayın",
+          "intro": "<div class='text-lg font-bold text-cyan-400 mb-2'>Bu oyun tamamen Monad Testnet blockchain üzerine inşa edilmiştir. Tüm oyun eylemleri akıllı sözleşmeler aracılığıyla gerçekleştirilir, web sitesi sadece bilgi görüntüleme görevi görür.</div>OpenSea veya Magic Eden'deki mevcut fiyatının %40'ına eşit OCTAA ücreti ödeyerek yeni bir küp çiftleştirebilirsiniz.",
+          "fee": "Ücret en son piyasa fiyatından otomatik olarak hesaplanır ve kalıcı olarak yakılır.",
+          "requirement": "Çiftleştirme için en az 1 ⭐ olan herhangi 2 NFT seçin.",
+          "rarity": "Yıldız derecelendirmeleri: 1 ⭐ — Yaygın, 2 ⭐ — Nadir, 3 ⭐ — Ender, 4 ⭐ — Destansı, 5 ⭐ — Efsanevi, 6 ⭐ — Mitik.",
+          "penalty": "Yıldız kaybolacak!",
+          "step1": "1. %40 ücret için OCTAA harcamasına izin verin.",
+          "step2": "2. Çiftleştirme işlemini onaylayın — yeni küp oluşturulur, OCTAA yakılır.",
+          "note": "Koleksiyon 5,000 küp ile sınırlıdır; OCTAA kurtarma olasılığı olmadan ölü cüzdana yanar.",
+          "buyNFT": "NFT Satın Al: <a>Magic Eden</a>",
+                  "contractAddress": "OCTAA Token Sözleşmesi: 0xBb526D657Cc1Ba772469A6EC96AcB2ed9D2A93e5"
+        },
+        "confirmDialog": {
+          "title": "NFT #{tokenId} Yak",
+          "warning": "⚠️ ÖNEMLİ: Bu işlem geri alınamaz!",
+          "description": "NFT'niz kalıcı olarak yakılacak ve mezarlığa gönderilecek.",
+          "waitPeriod": "Bekleme süresi:",
+          "minutes": "dakika",
+          "lockedCRAA": "Kilitli OCTAA:",
+          "fee": "Ücret:",
+          "afterBurn": "Yakma sonrası alırsınız",
+          "poolReceives": "Havuz alır:",
+          "burnedForever": "Sonsuza dek yakıldı:",
+          "transactions": "3 işlem imzalayacaksınız:",
+          "transaction1": "1️⃣ OCTAA ücretini onayla",
+          "transaction2": "2️⃣ NFT'yi onayla",
+          "transaction3": "3️⃣ NFT'yi yak",
+          "yourBalance": "OCTAA bakiyeniz:",
+          "cancel": "İptal",
+          "confirm": "Yakmayı Onayla",
+          "nftEarnings": "🎉 NFT Kazançları",
+          "totalLockedAmount": "Toplam kilitli OCTAA"
+        }
+      }
+    },
+  "footer": {
+    "copyright": "© 2025 OCTAAzyCube — Küplerin ağlayıp şakalaştığı yer!",
+    "OCTAAshMessage": "Site çöktüyse küp pizza almaya gitmiştir"
+  },
+  "construction": {
+    "title": "YAPIM AŞAMASINDA",
+    "message": "Bu bölüm hâlâ geliştirme aşamasındadır. Yakında burada birçok ilginç şey olacak!",
+    "returnHome": "Ana Sayfaya Dön",
+    "phrases": [
+      "Burada çalışıyorum! Rahatsız etme!",
+      "Yakında gelir, baretimi taktım!",
+      "İnşaat devam ediyor!",
+      "Küp şantiyede, sonra gel!",
+      "Burası güzel olacak, söz veriyorum!",
+      "Oops, erken geldin! Henüz bitirmedik!",
+      "Küp inşa ediyor, boyuyor, yoruldu..."
+    ]
+  },
+  "wallet": {
+    "connect": "Cüzdan Bağla",
+    "connecting": "Bağlanıyor…",
+    "copyAddress": "Adresi Kopyala",
+    "copied": "Kopyalandı!",
+    "openExplorer": "Explorer'da Aç",
+    "disconnect": "Bağlantıyı Kes",
+    "balance": "Bakiye",
+    "instruction": "Talimat",
+"nftInspectorButton": "NFT İnceleyici'ye Git",
+    "gameGuide": "CrazyCube Oyun Rehberi",
+    "gameGuideContent": {
+      "title": "🎮 CrazyCube Oyun Rehberi",
+      "gettingStarted": {
+        "title": "🔹 Başlangıç",
+        "getCRAA": "• OCTAA token edinin — gas ücretleri ve oyun aksiyonları için",
+        "buyNFTs": "• Pazarda CrazyCube NFT satın alın"
+      },
+      "howToStart": {
+        "title": "🔹 Oynamaya Nasıl Başlanır",
+        "goToPing": "• Ping sekmesine gidin — NFT'lerinizi göreceksiniz",
+        "activate": "• Yeni küp için Aktifleştir'e basın — bu ilk Ping'tir, OCTAA vermez ama zamanlayıcıyı başlatır",
+        "pingAfterActivation": "• Aktivasyondan sonra ping yapabilirsiniz (Ping'e tıklayın). Varsayılan olarak 24 saatte bir, ödüller birikmeye başlar",
+        "pingRewards": "• Her başarılı Ping OCTAA getirir — miktar şunlara bağlıdır:",
+        "rarityFactor": "- Küp nadirliği (Common, Rare, Mystic, vb.)",
+        "experienceBonus": "- Deneyim bonusunuz — her 24 saatte, ping kaçırmadan büyür",
+        "timeFactor": "- Ping'ler arası süre (daha fazla dönem geçtiyse, daha fazla OCTAA)"
+      },
+      "experienceBonus": {
+        "title": "🔹 Deneyim Bonusu Nedir",
+        "initialPenalty": "• Başlangıçta tüm küplerde -50% ceza vardır",
+        "bonusGrowth": "• Her 24 saatte ping yaptığınızda bonus alırsınız — +2.7%",
+        "maxBonus": "• Maksimum +97.2%'ye ulaşabilirsiniz + nadirlik bonusları da sayılır",
+        "miss10Days": "• 10 günden fazla kaçırırsanız — bonus artmaz",
+        "miss20Days": "• 20+ gün kaçırırsanız — bonus -50%'a sıfırlanır"
+      },
+      "howToGetCRAA": {
+        "title": "🔹 OCTAA Nasıl Alınır",
+        "accumulation": "• OCTAA hemen cüzdana düşmez, küpün içinde birikir (böylece her NFT'nin gerçek değeri olur)",
+        "collect": "• Toplamak için — küpü yakmanız gerekir (Burn) (küpünüz mezarlık bölümüne gider ve artık size ait olmaz, claim bölümünde OCTAA coin alırsınız)"
+      },
+      "howToBurn": {
+        "title": "🔹 Nasıl Yakılır",
+        "goToBurn": "• Burn bölümüne gidin",
+        "chooseCube": "• Küp ve bekleme süresini seçin:",
+        "time12h": "- 12 dakika → oyuncuya %50",
+        "time24h": "- 60 dakika → %70",
+        "time48h": "- 255 dakika → %80",
+        "restSplit": "• Geri kalanı havuz ve kalıcı yakma arasında bölünür (resmi ölü cüzdana gider)",
+        "claim": "• Seçilen süre sonra gidip Claim'e basın — OCTAA cüzdanınıza gelecek"
+      },
+      "howToRevive": {
+        "title": "🔹 Küp Nasıl Canlandırılır (Breed)",
+        "goToBreed": "• Breed bölümüne gidin",
+        "choose2Cubes": "• 2 canlı küp seçin (yıldızları olan ve soğuma süresinde olmayan)",
+        "selectGender": "• Her küp için cinsiyet seçin (erkek veya kadın)",
+        "payCRAA": "• Ücret ödeyin: %40 (%10 CRAA + %30 OCTAA) minimum pazar fiyatından",
+        "randomNFT": "• Mezarlıktan rastgele NFT yeni olarak size geri dönecek, tüm yıldızları ile ama coin olmadan:",
+        "bonusReset": "- Bonus sıfırlanır (-18.9%'a geri döner)",
+        "starsRestored": "- Yıldızlar geri yüklenir",
+        "canPingAgain": "- Baştan ping yapabilir"
+      },
+      "crasInSystem": {
+        "title": "🔹 Sistemde OCTAA Nerede",
+        "pingRewards": "• Ping için OCTAA aylık ödül havuzundan gelir",
+        "breedReturns": "• Breed'de harcanan OCTAA bu havuza geri döner",
+        "burnForever": "• Burn'dan OCTAA sonsuza kadar yanar",
+        "burnedGoesTo": "• Yakılan her şey özel cüzdan 0x...dead Monad Testnet ağından resmi cüzdan gider ve sonsuza kadar kaybolur"
+      },
+      "crasFees": {
+        "title": "🔹 OCTAA Token Ücretleri",
+        "transferFee": "• Transferlerde %3 ücret — oyun sözleşmesine gider",
+        "dexSalesFee": "• DEX satışlarında %10 ücret — oyun sözleşmesine gider",
+        "dexPurchaseFee": "• DEX alımlarında %0 ücret — alırken ücret yok",
+        "feesSupport": "• Tüm ücretler oyun ekosistemini ve ödül havuzunu destekler"
+      },
+      "exampleStrategy": {
+        "title": "🔹 Strateji Örneği",
+        "youHaveThree": "Üç küpünüz var:",
+        "common": "• Common (normal) — ping yapın, bonus her 24 saatte %2.7 artarak %97'ye kadar çıkar, sonra durur. NFT satabilir, transfer edebilirsiniz, bonus korunur",
+        "rare": "• Rare — Breed için kullanın veya OCTAA biriktirin",
+        "mystic": "• Mystic — nadir, daha fazla OCTAA getirir, yakmamak daha iyi",
+        "playCalmly": "Sakin oynayın:",
+        "pingEvery10Days": "• 24 saatte bir giriş yapın ve Ping'e basın",
+        "burnWeakCubes": "• Periyodik olarak zayıf küpleri yakın → token alın",
+        "reviveDead": "• Veya ölüleri canlandırın — daha nadir olanı alma şansı"
+      },
+      "tips": {
+        "title": "💡 İpuçları",
+        "maxProfit": "Maksimum kar istiyorsanız — düzenli ping yapın ve nadir küpleri çok erken yakmayın.",
+        "burnedTokens": "💥 Yakılan tokenlar geri gelmez — bu kalan OCTAA'nın değerini artırır."
+      },
+      "vision": {
+        "title": "🚀 Vizyonumuz",
+        "plans": "Planlarımız 1-2 ay içinde oyunu ayarlamak ve NFT ve token sözleşmelerinde admin haklarından vazgeçmek. Sosyal bir deney yapmak ve hiçbir şeyi değiştirme imkanı olmayan tamamen sosyal oyun yaratmak istiyoruz — sadece pazar ve insanlar karar verir.",
+        "noBonuses": "Ekibin OCTAA coin şeklinde sözleşmede bonusu yoktur. Bir cüzdan oluşturabilirsiniz, örneğin Rabby cüzdanında 1 dakikada ve oyunumuzu oynayabilirsiniz.",
+        "decentralized": "Yakında oyunumuz pazar öz-düzenlemesi ile %100 merkezi olmayan olacak."
+      }
+    },
+    "gameGuideContent": "🎮 CrazyCube Oyun Rehberi\n\n🔹 Başlangıç\n• OCTAA token'larını alın — gaz ücretleri ve oyun eylemleri için\n• Marketplace'te CrazyCube NFT'lerini satın alın\n• Satın almadan önce NFT'yi \\\"Bilgi\\\" → \\\"NFT İnceleyici\\\" bölümünde kontrol edin — NFT numarasını girin ve tam bilgi alın: kilitli coin miktarı, kalan yıldızlar, bekleme süresi durumu ve diğer parametreler\n\n🔹 Nasıl Oynamaya Başlanır\n• Ping sekmesine gidin — NFT'lerinizi göreceksiniz\n• Yeni küp için Aktifleştir'e basın — bu ilk Ping'dir, OCTAA vermez ama zamanlayıcıyı başlatır\n• Aktifleştirmeden sonra ping yapabilirsiniz (Ping'e basın). Varsayılan olarak 24 saatte bir, ödüller birikmeye başlar\n• Her başarılı Ping OCTAA getirir — miktar şunlara bağlıdır:\n  - Küp nadirliği (Common, Rare, Mystic, vb.)\n  - Deneyim bonusunuz — 24 saatte bir, ping kaçırmadan büyür\n  - Ping'ler arasındaki süre (daha fazla dönem geçtiyse, daha fazla OCTAA)\n\n🔹 Deneyim Bonusu Nedir\n• Başlangıçta tüm küpler -18.9% cezaya sahiptir\n• 24 saatte bir ping yaptığınızda bonus alırsınız — +2.7%\n• Ulaşabileceğiniz maksimum +97.2% + nadirlik bonusları da sayılır\n• Ping'leri kaçırırsanız — bonus artmayacak\n• Ping'leri kaçırırsanız — bonus -18.9%'e sıfırlanır\n\n🔹 OCTAA Nasıl Alınır\n• OCTAA hemen cüzdana düşmez, küp içinde birikir (böylece her NFT gerçek değere sahiptir)\n• Toplamak için — küpü yakmanız gerekir (Yak) (küpünüz mezarlık bölümüne gider ve artık size ait değildir, claim bölümünde OCTAA coin'leri alırsınız)\n\n🔹 Nasıl Yakılır\n• Yak bölümüne gidin\n• Küp ve bekleme süresini seçin:\n  - 12 dakika → %50 oyuncuya\n  - 60 dakika → %70\n  - 255 dakika → %80\n• Geri kalanı havuz ve kalıcı yakma arasında bölünür (resmi ölü cüzdana gider)\n• Seçilen süreden sonra gidin ve Talep Et'e basın — OCTAA cüzdanınıza gelecek\n\n🔹 Küp Nasıl Canlandırılır (Üretim)\n• Üretim bölümüne gidin\n• 2 canlı küp seçin (yıldızları olan ve bekleme süresinde olmayan)\n• OCTAA ödeyin (marketplace minimum fiyatının %10'u, sürekli güncellenir)\n• Mezarlıktan rastgele bir NFT yeni olarak size geri dönecek, tüm yıldızlarla ama coin'siz:\n  - Bonus sıfırlanır (geri -18.9%'e)\n  - Yıldızlar geri yüklenir\n  - Sıfırdan tekrar ping yapabilirsiniz\n\n🔹 Sistemde OCTAA Nerede\n• Ping için OCTAA aylık ödül havuzundan gelir\n• Üretimde harcanan OCTAA bu havuza geri döner\n• Yakma'dan OCTAA sonsuza kadar yanar\n• Yakılan her şey özel cüzdan 0x...dead'e gider ve sonsuza kadar kaybolur\n\n🔹 OCTAA Token Ücretleri\n• Transferlerde %3 ücret — oyun sözleşmesine gider\n• DEX satışlarında %10 ücret — oyun sözleşmesine gider\n• DEX alımlarında %0 ücret — alırken ücret yok\n• Tüm ücretler oyun ekosistemini ve ödül havuzunu destekler\n\n🔹 Örnek Strateji\nÜç küpünüz var:\n• Common (normal) — ping yapın, bonus 24 saatte bir %2.7 büyür, %97'ye kadar, sonra durur. Satabilir, NFT transfer edebilirsiniz, bonus korunur ve NFT'deki kilitli coin'ler de korunur\n• Rare — Üretim için kullanın veya OCTAA biriktirin\n• Mystic — nadir, daha fazla OCTAA getirir, yakmamak daha iyi\n\nSakin oynayın:\n• 24 saatte bir giriş yapın ve Ping'e basın\n• Periyodik olarak zayıf küpleri yakın → token alın\n• Veya ölüleri canlandırın — daha nadir olan için şans alın\n\n💡 İpuçları\nMaksimum kar istiyorsanız — düzenli ping yapın ve nadir küpleri çok erken yakmayın.\n💥 Yakılan tokenlar geri gelmeyecek — bu kalan OCTAA'nın değerini artırır.\n\n🚀 Vizyonumuz\n1-2 ay içindeki planlarımız oyun oynanışını ayarlamak ve NFT ve token sözleşmelerindeki yönetici haklarından vazgeçmektir. Sosyal bir deney yapmak ve hiçbir şeyi değiştirme imkanı olmayan tamamen sosyal oyun oynanışı yaratmak istiyoruz — sadece pazar ve insanlar karar verir.\n\nEkibin sözleşmede OCTAA coin şeklinde bonusu yok. Bir cüzdan oluşturabilirsiniz, örneğin Rabby cüzdanında 1 dakikada oluşturun ve oyunumuzu oynayın.\n\nYakında oyunumuz %100 merkezi olmayan pazar öz düzenlemesi ile olacak. Ayrıca planlarda OCTAA token'ları Solana blockchain'ine aktarılabilecek ve ticareti yapılabilecek, bu coin'i özellikle değerli yapacak, ayrıca NFT'ler de Solana blockchain'ine aktarılabilecek ve bildiğiniz gibi Solana blockchain'inde hem coin hem de NFT'lerde büyük işlemler var."
+  },
+  "tabs": {
+    "breed": "Çiftleştir",
+    "bridge": "Köprü",
+    "burn": "Yak",
+    "claim": "Ödüller",
+    "graveyard": "Mezarlık",
+    "ping": "Ping",
+    "rewards": "Ödüller",
+    "info": "Bilgi"
+  },
+  "navigation": {
+    "home": "Ana Sayfa",
+    "breed": "Üretim",
+    "bridge": "Köprü",
+    "burn": "Yakma",
+    "claim": "Talep Et",
+    "graveyard": "Mezarlık",
+    "ping": "Ping",
+
+    "returnHome": "Ana Sayfaya Dön"
+  },
+  "ping": {
+    "title": "NFT Ping",
+          "description": "OCTAA token kazanmak için NFT'nizi her 24 saatte bir pinleyin! Küplerinizi aktive edin ve ödülleri biriktirin, maksimum 30 gün biriktirme yapabilirsiniz.",
+    "connectWallet": "Küplerinizi görmek için cüzdan bağlayın",
+    "noNFTs": "OCTAAzyCube NFT bulunamadı.",
+    "loadingNFTs": "NFT'ler yükleniyor...",
+    "pingAll": "Tümünü Ping At",
+    "pingSelected": "Seçilenleri Ping At",
+    "selectAll": "Tümünü Seç",
+    "deselectAll": "Hiçbirini Seçme",
+    "selected": "Seçili",
+    "nfts": "NFT",
+    "lastPing": "Son Ping",
+    "nextPing": "Sonraki Ping",
+    "available": "Uygun",
+    "cooldown": "Bekleme Süresi",
+    "pingSuccess": "Ping başarılı!",
+    "pingError": "Ping hatası:",
+    "transactionPending": "İşlem bekleniyor...",
+    "selectNFTs": "Ping atılacak NFT'leri seçin"
+  },
+  "tokenInfo": {
+    "priceUSD": "USD Fiyatı",
+    "marketCap": "Piyasa Değeri",
+    "volume24h": "24s Hacim",
+    "totalBurns": "Toplam Yakım",
+    "avg": "Ort.",
+    "totalSupply": "Toplam Arz",
+    "circulating": "Dolaşımdaki",
+    "burned": "Yakıldı"
+  },
+  "common": {
+    "retry": "Tekrar Dene",
+    "loading": "Yükleniyor...",
+    "loadingNFTs": "NFT'ler yükleniyor...",
+    "total": "Toplam",
+    "fetchingCollection": "OCTAAzyCube koleksiyonunuz alınıyor",
+    "noNFTsFound": "NFT bulunamadı",
+    "goToCollection": "Koleksiyona git"
+  },
+  "market": {
+    "loading": "Pazar verileri yükleniyor...",
+    "failed": "Pazar verileri yüklenemedi",
+    "header": "Pazar Fiyatları",
+    "subtitle": "Gerçek zamanlı NFT ve tokenlar",
+    "error": "Hata",
+    "live": "Canlı",
+    "floorPrice": "Taban Fiyat",
+    "buyNft": "MagicEden'da NFT Satın Al",
+    "gameToken": "Oyun Tokeni",
+    "baseCurrency": "Ana Para Birimi",
+    "tradeDex": "Camelot DEX'te Ticaret Yap",
+    "additional": "Ek Bilgi",
+    "change1h": "1s Değişim",
+    "change24h": "24s Değişim",
+    "volume24h": "24s Hacim",
+    "marketCap": "Piyasa Değeri"
+  },
+  "rewards": {
+    "loading": {
+      "title": "Ödülleriniz aranıyor…"
+    },
+    "accumulated": "Birikmiş:",
+    "toPool": "Havuza",
+    "burned": "Yakıldı",
+    "toClaim": "Talep Edilecek",
+    "availableIn": "Kullanılabilir:",
+    "processing": "İŞLENİYOR...",
+            "claim": "TALEP ET",
+    "claimed": "ÖDÜL TALEP EDİLDİ"
+  },
+  "info": {
+    "nftInspector": "⏱️ NFT Bekleme Müfettişi",
+    "lockedCRAA": "Kilitli OCTAAA",
+    "enterNftId": "Kontrol edilecek NFT ID'sini girin",
+    "connectWallet": "NFT kontrolü için cüzdan bağla",
+    "connectWalletNfts": "NFT'lerinizi görmek için cüzdan bağlayın",
+    "noNfts": "OCTAAzyCube NFT'niz yok",
+    "yourNfts": "NFT'leriniz",
+    "live": "canlı",
+    "inGraveyard": "mezarlıkta",
+    "activeNfts": "Aktif NFT'ler",
+    "nftsInGraveyard": "Mezarlıktaki NFT'ler",
+    "noStars": "Yıldız Yok",
+    "totalCRAALocked": "NFT'lerinizde kilitli toplam OCTAAA",
+    "nftCollection": "NFT Koleksiyonu",
+    "totalNfts": "Toplam NFT",
+    "CRAASupply": "OCTAAA Arzı",
+    "rarity": "Nadirlik",
+    "stars": "Yıldızlar",
+    "status": "Durum",
+    "graveyard": "Mezarlık",
+    "active": "Aktif",
+    "locked": "Kilitli",
+    "timeLeft": "Kalan Süre",
+    "guide": {
+      "title": "OCTAAzyCube Nasıl Oynanır",
+      "subtitle": "Oyun mekanikleri tam rehberi"
+    },
+    "tabs": {
+      "overview": "Genel Bakış",
+      "CRAAToken": "OCTAAA Token",
+      "contract": "Sözleşme",
+      "contractData": "Sözleşme Verileri",
+      "liveAnalytics": "Canlı Analitik"
+    },
+    "features": {
+      "title": "⚡ Benzersiz Oyun Özellikleri",
+      "accumulate": {
+        "title": "Biriken paralar yanmaz",
+        "desc": "OCTAAA tokenlarınız kilitlenir ve birikir, sonsuza dek yanmazlar!"
+      },
+      "future": {
+        "title": "Merkezi Olmayan Gelecek",
+        "desc": "Hata ayıklama sonrası (1-2 ay) takım yönetici haklarını devre dışı bırakıp kontrolü otonom ajana devredecek"
+      },
+      "autonomy": {
+        "title": "Tam Özerklik",
+        "desc": "NFT koleksiyonu tamamen merkezi olmayan pazar yönetimine geçiş yapacak"
+      }
+    },
+    "actions": {
+      "title": "📊 Oyun Eylemleri ve Zamanlayıcıları",
+      "timeLabel": "Süre:",
+      "burn": {
+        "title": "NFT Yak",
+        "time": "30/120/480 dakika",
+        "desc": "NFT yak ve ödüller için OCTAAA tokenlarını kilitle"
+      },
+      "graveyard": {
+        "title": "Mezarlık",
+        "desc": "Yakılan NFT'ler 24s beklemeli mezarlığa gider"
+      },
+      "breed": {
+        "title": "Çiftleştirme",
+        "desc": "Mezarlıktan yeni NFT'ler yarat",
+        "note": "Çiftleştirme sonrası NFT eylemlere katılamaz"
+      },
+      "ping": {
+        "title": "Ping",
+        "desc": "Ödüller için NFT'yi etkinleştir",
+        "time": "7 günlük aralık",
+        "note": "NFT'ler birikir ve yanmaz!"
+      },
+      "rewards": {
+        "title": "Havuz Ödülleri",
+        "desc": "Ödül havuzundan OCTAAA tokenları al",
+        "time": "30 günlük aralık"
+      },
+      "other": {
+        "title": "Diğer Eylemler",
+        "desc": "Çeşitli oyun mekanikleri",
+        "time": "24s bekleme"
+      },
+      "cooldown48": "24s bekleme"
+    },
+    "roadmap": {
+      "title": "🛣️ Merkezi Olmayanlığa Giden Yol",
+      "phase1": {
+        "title": "1. Aşama: Hata Ayıklama",
+        "desc": "Tüm oyun mekaniklerinin 1-2 aylık test ve optimizasyonu"
+      },
+      "phase2": {
+        "title": "2. Aşama: Özerklik",
+        "desc": "Otonom ajan bağlama ve yönetici haklarını kaldırma"
+      },
+      "phase3": {
+        "title": "3. Aşama: Özgürlük",
+        "desc": "NFT koleksiyonu ve oyun sözleşmesi tamamen merkezi olmayan olacak, OCTAAA token otonom hale gelecek"
+      },
+      "callout": "🚀 OCTAAzyCube - tam merkezi olmayanlık planı olan ilk NFT koleksiyonu!"
+    },
+    "title": "Bilgi ve analitik"
+  },
+  "status": {
+    "ready": "Hazır",
+    "readyToClaim": "Talep Etmeye Hazır",
+    "waiting": "Hazır Değil",
+    "processing": "İşleniyor",
+    "success": "Başarılı",
+    "failed": "Başarısız",
+    "claim": "Talep Et",
+    "claimed": "Talep Edildi",
+    "alreadyBurned": "Zaten Yakıldı",
+    "alreadyInGraveyard": "Zaten Mezarlıkta",
+    "noStarsLeft": "Yıldız Kalmadı",
+    "activated": "Etkinleştirildi",
+    "notActivated": "Etkinleştirilmedi",
+    "cantPing": "Ping Yapılamaz",
+    "rewardReady": "Ödül Hazır",
+    "readyForBreeding": "Üreme İçin Hazır",
+    "claimReady": "Talep Etmeye Hazır",
+    "locked": "Kilitli",
+    "claimable": "Talep Edilebilir",
+    "burnable": "Yakılabilir",
+    "done": "Bitti!",
+    "graveyard": "Mezarlık",
+    "alive": "Canlı",
+    "dying": "Ölüyor",
+    "notClaimed": "Hayır",
+    "confirming": "Onaylanıyor..."
+  },
+  "nft": {
+    "burnable": "Yakılabilir"
+  },
+  "pages": {
+    "breed": {
+      "title": "Küp Çiftleştirme",
+      "subtitle": "İki ebeveynden yeni küp yarat",
+      "selectParents": "İki ebeveyn seç",
+      "noNftsAvailable": "Çiftleştirme için mevcut NFT yok",
+      "needTwoParents": "İki ebeveyn seçmeniz gerekiyor",
+      "breedingFee": "Çiftleştirme ücreti",
+      "breedingSuccess": "Çiftleştirme başarılı!",
+      "breedingFailed": "Çiftleştirme başarısız",
+      "howItWorks": "Nasıl çalışır",
+      "breedingGuide": "Çiftleştirme rehberi",
+      "selectTwoNfts": "En az 1 yıldızlı 2 NFT seç",
+      "payFee": "Pazar fiyatının %40'si ücret öde",
+      "getNewCube": "Koleksiyonunda yeni küp al"
+    },
+    "burn": {
+      "title": "Küp Yakma",
+      "subtitle": "Kilitli OCTAAA almak için NFT yak",
+      "selectToBurn": "Yakılacak NFT seç",
+      "burnFee": "Yakma ücreti",
+      "burnSuccess": "Yakma başarılı!",
+      "burnFailed": "Yakma başarısız",
+      "confirmBurn": "Yakmayı onayla",
+      "burnWarning": "Uyarı: yakma geri alınamaz!",
+      "nftWillBeDestroyed": "NFT sonsuza dek yok edilecek",
+      "CRAAWillBeTransferred": "OCTAAA cüzdanınıza transfer edilecek"
+    },
+    "ping": {
+      "title": "Küp Ping",
+      "subtitle": "OCTAAA kazanmak için 3 dakikada bir küpleri pingle",
+      "pingYourCubes": "Küplerinizi pingleyin",
+      "howPingWorks": "Ping nasıl çalışır",
+      "pingInterval": "Ping aralığı",
+      "betweenPings": "Pingler arası",
+      "pingableNfts": "Ping atmaya hazır NFT'ler",
+      "noPingableNfts": "Ping atmaya hazır NFT yok",
+      "nftsNeedActivation": "Ping atabilmek için NFT'leriniz etkinleştirilmeli ve mezarlıkta olmamalı",
+      "pingInitiated": "Ping başlatıldı!",
+      "pingTransaction": "NFT için ping işlemi gönderildi",
+      "earnCRAABasedOnRarity": "Nadirliğe göre OCTAAA kazanacaksınız!",
+      "pingSuccessful": "Ping başarılı!",
+      "nftPinged": "NFT'niz pinglendi ve OCTAAA kazandınız!"
+    },
+    "claim": {
+      "title": "Ödül Talep Et",
+      "subtitle": "Kazandığınız OCTAAA tokenlarını talep edin",
+      "searchingRewards": "Ödülleriniz aranıyor",
+      "scanningBlockchain": "Blockchain ve mezarlık taranıyor, bu birkaç saniye sürebilir",
+      "noRewards": "Ödül bulunamadı",
+      "noRewardsDescription": "Henüz talep edilebilir ödülünüz yok"
+    },
+    "graveyard": {
+      "title": "Küp Mezarlığı",
+      "subtitle": "Yakılan NFT'lerin dinlenme yeri",
+      "burnedCubes": "Yakılan küpler",
+      "restInPeace": "Huzur içinde yat",
+      "someStillWhisper": "Bazıları küllerden hâlâ fısıldıyor",
+      "totalBurned": "Toplam yakılan",
+      "viewBurnedNft": "Yakılan NFT'yi gör"
+    },
+    "stats": {
+      "title": "Oyun İstatistikleri",
+      "subtitle": "Gerçek zamanlı oyun durumu verileri",
+      "totalNfts": "Toplam NFT",
+      "activeNfts": "Aktif NFT'ler",
+      "burnedNfts": "Yakılan NFT'ler",
+      "totalCRAA": "Toplam OCTAAA",
+      "lockedCRAA": "Kilitli OCTAAA",
+      "burnedCRAA": "Yakılan OCTAAA",
+      "gameActivity": "Oyun Aktivitesi",
+      "recentTransactions": "Son İşlemler"
+    },
+    "info": {
+      "title": "Bilgi",
+      "nalaPhrases": [
+        "📊 Veriler biraz uyuşmuyor, ama her şeyi düzelteceğiz! Bize zaman verin ⏰",
+        "🔧 Sistem hata ayıklama devam ediyor, yakında her şey mükemmel çalışacak! ✨",
+        "📈 Sayılar henüz eşleşmiyor, ama takım düzeltme üzerinde çalışıyor 🛠️",
+        "⚡ Yeni özellikler test ediliyor, biraz sabırlı olun - harika olacak! 🚀",
+        "🎯 Maksimum veri doğruluğu için algoritmalar ayarlanıyor 📊",
+        "🌟 Tüm geçici farklılıklar yakında düzeltilecek! 💫",
+        "🔄 Sistem güncelleniyor, yakında her şey saat gibi çalışacak! ⏰"
+      ],
+      "subtitle": "NFT'leriniz ve oyun hakkında detaylı bilgi",
+      "overview": "Genel Bakış",
+      "yourCollection": "Koleksiyonunuz",
+      "gameRules": "Oyun Kuralları",
+      "tokenomics": "Tokenomics",
+      "connectWalletNfts": "NFT'lerinizi görmek için cüzdanınızı bağlayın.",
+      "noNfts": "Hiçbir OCTAAzyCube NFT'sine sahip değilsiniz.",
+      "yourNfts": "NFT'leriniz",
+      "live": "canlı",
+      "inGraveyard": "mezarlıkta",
+      "activeNfts": "Aktif NFT'ler",
+      "nftsInGraveyard": "Mezarlıktaki NFT'ler",
+      "noStars": "Yıldız yok",
+      "lockedCRAA": "Kilitli OCTAAA",
+      "totalCRAALocked": "NFT'lerinizde kilitli toplam OCTAAA",
+      "CRAALockedWarning": "NFT'nin içinde kilitli olan OCTAAA yakılmaz ve NFT transfer edildiğinde, satıldığında veya herhangi bir şekilde taşındığında onunla birlikte hareket eder. Bunlar kalıcı olarak NFT'ye aittir. Bu tokenleri yalnızca NFT'yi yakarak elde edebilirsiniz.",
+      "CRAALockedWarningBurn": "yakarak"
+    }
+  },
+  "components": {
+    "buttons": {
+      "connect": "Bağlan",
+      "disconnect": "Bağlantıyı Kes",
+      "approve": "Onayla",
+      "confirm": "Onayla",
+      "cancel": "İptal",
+      "retry": "Tekrar Dene",
+      "close": "Kapat",
+      "back": "Geri",
+      "next": "İleri",
+      "save": "Kaydet",
+      "load": "Yükle",
+      "refresh": "Yenile"
+    },
+    "messages": {
+      "loading": "Yükleniyor...",
+      "connecting": "Bağlanıyor...",
+      "processing": "İşleniyor...",
+      "success": "Başarılı!",
+      "error": "Hata",
+      "warning": "Uyarı",
+      "info": "Bilgi",
+      "noData": "Veri yok",
+      "noResults": "Sonuç bulunamadı",
+      "tryAgain": "Tekrar dene",
+      "somethingWentWrong": "Bir şeyler ters gitti",
+      "pleaseWait": "Lütfen bekleyin",
+      "transactionPending": "İşlem beklemede",
+      "transactionConfirmed": "İşlem onaylandı",
+      "transactionFailed": "İşlem başarısız"
+    },
+    "forms": {
+      "required": "Gerekli alan",
+      "invalid": "Geçersiz değer",
+      "tooShort": "Çok kısa",
+      "tooLong": "Çok uzun",
+      "enterAmount": "Miktar girin",
+      "selectOption": "Seçenek seçin",
+      "searchPlaceholder": "Ara...",
+      "noOptionsAvailable": "Kullanılabilir seçenek yok"
+    },
+    "navigation": {
+      "home": "Ana Sayfa",
+      "back": "Geri",
+      "forward": "İleri",
+      "menu": "Menü",
+      "settings": "Ayarlar",
+      "help": "Yardım",
+      "about": "Hakkında"
+    }
+  },
+  "rarity": {
+    "common": "Yaygın",
+    "uncommon": "Az Bulunan",
+    "rare": "Nadir",
+    "epic": "Epik",
+    "legendary": "Efsanevi",
+    "mythic": "Mitik",
+    "unknown": "Bilinmeyen"
+  },
+  "cube": "Küp",
+  "glueCube": {
+    "phrases": [
+      "Bu yangını söndürelim! 🧯",
+      "Ateş-ateş, dur bakalım! 🔥",
+      "Panik yapmayın, yangın söndürücüm var! 💨",
+      "Pşşş-pşşş! Her şey kontrol altında! 🚒",
+      "Yangın nerede? Hepsini söndüreceğim! 🧯"
+    ]
+  },
+  "cubeObservers": {
+    "idlePhrases": [
+      "Sessiz olun! Kuantum kahkaha jeneratörünü kalibre ediyoruz.",
+      "Kafein beherimi yine kim sakladı?",
+      "Veriler %83 sevimli kaos olasılığı gösteriyor.",
+      "Burada romantizm yok, sadece kontrollü deneyler!",
+      "Güvenlik gözlükleri takıldı, hipotezler sahnede!"
+    ],
+    "successPhrases": [
+      "Evrika! Laboratuvara yeni bir küp katıldı!",
+      "Hakemli mükemmellik: küp bebek onaylandı.",
+      "Bu keşfi kayda geçin—bilimsel olarak aşırı tatlı!"
+    ]
+  },
+  "shyCubes": {
+    "bubbles": [
+      "Oh-oh-oh!",
+      "Burada neler oluyor?",
+      "Kim gürültü yapıyor?",
+      "Hiçbir şey görmedik!",
+      "Bakma!"
+    ]
+  },
+  "graveyard": {
+    "claimedReward": "Claimed reward",
+    "claimError": "Claim error"
+  },
+  "burn": {
+    "description": "Burn the cube — get OCTAAA. Easy money! 💰",
+    "noNFTsDescription": "You don't have any OCTAAzyCube NFTs to burn",
+    "interface": {
+      "burnButton": "Yak",
+      "insufficientOCTA": "Yetersiz OCTAA",
+      "balanceDetails": {
+        "you": "👤 Sen",
+        "pool": "🏦 Havuz",
+        "burn": "🔥 Yakma",
+        "split": "60% / 30% / 10%"
+      }
+    }
+  },
+  "stats": {
+    "analytics": "Analytics",
+    "yourNFTs": "Your NFTs",
+    "bridgeNFT": "Bridge NFT"
+  },
+  "distribution": {
+    "activeVsGraveyard": "Active vs In graveyard by rarity",
+    "rarity": "Rarity",
+    "byRarity": "By Rarity",
+    "byStatus": "By Status",
+    "nfts": "NFTs"
+  },
+  "contractInteraction": {
+    "error": "Error",
+    "enterTokenId": "Please enter a token ID",
+    "enterTokenIdAndHours": "Please enter token ID and wait hours",
+    "enterBothParents": "Please enter both parent token IDs"
+  },
+  "bridge": {
+    "title": "Çapraz Zincir Köprüsü 🌉",
+    "description": "OCTAA token'larınızı ve CrazyCube NFT'lerinizi Monad Testnet ve Solana arasında sorunsuz bir şekilde aktarın",
+    "connectWallet": "Cüzdanınızı Bağlayın",
+    "connectWalletDesc": "Çapraz zincir köprüsüne erişmek için lütfen cüzdanınızı bağlayın",
+    "guide": {
+      "title": "Varlıkları Nasıl Köprüleyeceğiniz",
+      "intro": "Varlıklarınızı Monad Testnet ve Solana ağları arasında güvenli ve verimli bir şekilde köprüleyin.",
+      "step1": "Köprülemek için varlık türünü seçin (OCTAA token'ları veya NFT'ler)",
+      "step2": "Kaynak ve hedef ağları seçin",
+      "step3": "Miktar girin veya aktarmak için NFT seçin",
+      "step4": "İşlemi onaylayın ve tamamlanmasını bekleyin",
+      "note": "Köprüleme işlemi genellikle 30-60 saniye sürer. Varlıklar aktarım sırasında akıllı sözleşmeler tarafından korunur."
+    },
+    "interface": {
+      "title": "Köprü Arayüzü",
+      "amountLabel": "Köprülemek için Miktar",
+      "amountPlaceholder": "0.00",
+      "available": "Mevcut: 1,234.56 OCTAA",
+      "useMax": "Maksimum Kullan",
+      "selectNftLabel": "Köprülemek için NFT Seçin",
+      "selectNftPlaceholder": "CrazyCube NFT'nizi seçin",
+      "bridgeButton": "{type} Köprüsü",
+      "bridgeAgain": "Tekrar Köprüle",
+      "preparing": "Hazırlanıyor...",
+      "processing": "İşleniyor...",
+      "confirming": "Onaylanıyor...",
+      "insufficientOCTA": "Yetersiz OCTAA",
+      "insufficientOCTADesc": "Köprülemek için {required} OCTAA gerekiyor. Bakiyeniz: {balance} OCTAA",
+      "balanceDetails": {
+        "you": "👤 Sen",
+        "pool": "🏦 Havuz",
+        "burn": "🔥 Yakma",
+        "split": "60% / 30% / 10%"
+      }
+    },
+    "status": {
+      "ready": "Köprülemeye Hazır",
+      "preparing": "İşlem Hazırlanıyor",
+      "processing": "Köprü İşleniyor",
+      "confirming": "Hedefte Onaylanıyor",
+      "success": "Köprü Tamamlandı",
+      "error": "Köprü Başarısız",
+      "remaining": "~{time} saniye kaldı"
+    },
+    "success": {
+      "title": "Köprüleme Başarılı!",
+      "description": "{type} başarıyla {network} ağına köprülendi.",
+      "transaction": "İşlem: {hash}"
+    },
+    "info": {
+      "title": "Köprü Bilgileri",
+      "security": {
+        "title": "Güvenlik",
+        "description": "Varlıklar köprüleme işlemi sırasında akıllı sözleşmeler tarafından korunur"
+      },
+      "speed": {
+        "title": "Hız",
+        "description": "Köprüleme tamamlanması genellikle 30-60 saniye sürer"
+      },
+      "fees": {
+        "title": "Ücretler",
+        "description": "Çapraz zincir aktarımları için minimum köprü ücretleri"
+      }
+    },
+    "comingSoon": {
+      "title": "🚀 Yakında Gelecek Özellikler",
+      "features": [
+        "Monad Testnet ve Solana arasında OCTAA token'larını köprüleyin",
+        "Ağlar arası CrazyCube NFT aktarımı",
+        "NFT meta verilerini ve nadirliğini koruyun",
+        "Düşük maliyetli çapraz zincir işlemleri",
+        "Gerçek zamanlı köprü durumu takibi",
+        "Otomatik bakiye senkronizasyonu"
+      ]
+    }
+  },
+  "nftInspector": {
+    "title": "NFT Bekleme Süresi İnceleyicisi",
+    "description": "NFT İnceleyicisi cüzdan bağlantısı olmadan çalışır - genel istatistikleri görmek için herhangi bir NFT ID'si girin.",
+    "enterNftId": "NFT ID Girin",
+    "inspect": "İncele",
+    "loading": "NFT verisi yükleniyor...",
+    "error": "NFT verisi alınırken hata",
+    "notFound": "NFT bulunamadı veya aktifleştirilmedi",
+    "status": {
+      "active": "Aktif",
+      "inactive": "Pasif"
+    },
+    "lockedCRAA": "Kilitli OCTAAA",
+    "pendingCRAA": "Bekleyen OCTAAA",
+    "periods": "Dönemler",
+    "ping": "Ping",
+    "breed": "Çiftleştirme",
+    "ready": "Hazır"
+  },
+  "burn": {
+    "interface": {
+      "burnButton": "Yak",
+      "insufficientOCTA": "Yetersiz OCTAA",
+      "balanceDetails": {
+        "you": "👤 Sen",
+        "pool": "🏦 Havuz",
+        "burn": "🔥 Yakma",
+        "split12h": "60% / 30% / 10%",
+        "split24h": "70% / 20% / 10%",
+        "split48h": "80% / 10% / 10%"
+      }
+    }
+  },
+  "swap": {
+    "buyCRAA": "Camelot'ta OCTAA Satın Al",
+    "buyCRAALink": "https://pancakeswap.finance/swap?outputCurrency=0xB4832932D819361e0d250c338eBf87f0757ed800",
+    "instructions": {
+      "title": "OCTAA satın alma talimatları:",
+      "step1": "Aşağıdaki '🟡 Camelot'ta OCTAA Satın Al' butonuna tıklayın",
+      "step2": "Otomatik olarak Monad Testnet ağına geçin",
+      "step3": "Slippage ayarla: alış 3-5%, satış 10-15%",
+      "step4": "Cüzdanda işlemi onaylayın"
+    },
+    "fees": {
+      "title": "💰 Komisyonlar ve Slippage:",
+      "buy": {
+        "title": "🟢 OCTAA Satın Al (APE → OCTAA):",
+        "slippage": "3-5% (önerilen)",
+        "tax": "Alışta %0 vergi",
+        "link": "https://pancakeswap.finance/swap?outputCurrency=0xB4832932D819361e0d250c338eBf87f0757ed800"
+      },
+      "sell": {
+        "title": "🔴 OCTAA Sat (OCTAA → APE):",
+        "slippage": "10-15% (önerilen)",
+        "tax": "%10 (otomatik)",
+        "total": "Satışta toplam: 10-15% slippage + %10 vergi"
+      },
+      "transfer": {
+        "title": "📤 OCTAA Transfer:",
+        "tax": "Transfer sırasında %3 vergi"
+      },
+      "camelot": "Camelot Komisyonu:",
+      "free": "%0 (ücretsiz)",
+      "slippage": "Slippage:",
+      "token": {
+        "tax": "Token Vergisi:"
+      }
+    },
+    "slippage": {
+      "what": {
+        "title": "💡 Slippage nedir?",
+        "description": "Slippage, kabul etmeye razı olduğunuz maksimum fiyat değişimidir. Yüksek volatilite veya düşük likiditede, işlem gönderimi ile gerçekleşmesi arasında fiyat değişebilir."
+      }
+    },
+    "screenshot": {
+      "title": "📸 Camelot ayar örneği:",
+      "alt": "Camelot ayar örneği",
+      "fallback": "Camelot ayar ekran görüntüsü /public/images/1234.jpg adresine eklenecek"
+    },
+    "dexscreener": {
+      "button": "DexScreener'da OCTAA fiyatını görüntüle"
+    },
+    "camelot": {
+      "button": "Camelot'ta OCTAA Satın Al",
+      "link": "https://pancakeswap.finance/swap?outputCurrency=0xB4832932D819361e0d250c338eBf87f0757ed800"
+    },
+    "security": "Camelot V2 üzerinden güvenli satın alma",
+    "recommended": {
+      "settings": "Önerilen ayarlar: alış 3-5% slippage, satış 10-15% slippage"
+    }
+  }
+}

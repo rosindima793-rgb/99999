@@ -1,0 +1,136 @@
+[build]
+  command = "npm run build"
+  # Use the Netlify Next.js plugin to produce the correct output for Next.js
+  # The plugin writes the final published files under .netlify/output/public
+  publish = ".netlify/output/public"
+
+[build.environment]
+  NODE_VERSION = "18"
+  NODE_ENV = "production"
+  NEXT_TELEMETRY_DISABLED = "1"
+  NPM_CONFIG_PRODUCTION = "false"
+  NPM_FLAGS = "--include=dev"
+  
+  # Disable secrets scanning for public RPC URLs and chain IDs (NOT SECRETS!)
+  SECRETS_SCAN_OMIT_KEYS = "MONAD_RPC,MONAD_RPC_2,MONAD_RPC_3,NEXT_PUBLIC_MONAD_CHAIN_ID,NEXT_PUBLIC_MONAD_RPC,NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID,NEXT_PUBLIC_ALCHEMY_API_KEY_1,NEXT_PUBLIC_ALCHEMY_API_KEY_2,NEXT_PUBLIC_ALCHEMY_API_KEY_3"
+
+# MAXIMUM SECURITY FOR BLOCKCHAIN DAPPS - 2025 STANDARDS
+# Based on OWASP Top 10 2021 and modern Web3 security practices
+# 
+# IMPORTANT: CSP is configured for Netlify compatibility
+# - 'unsafe-inline' required for Next.js dynamic components
+# - 'unsafe-eval' required for Web3 libraries (Wagmi, Web3Modal)
+# - 'strict-dynamic' added for dynamic script loading
+# - Trusted Types still enforced for XSS protection
+# - This is the maximum security possible on Netlify for Web3 dApps
+[[headers]]
+  for = "/*"
+  [headers.values]
+    # Core Security Headers
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    X-XSS-Protection = "1; mode=block"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
+    
+    # Advanced Security Headers for Web3
+    Cross-Origin-Resource-Policy = "same-origin"
+    Cross-Origin-Opener-Policy = "same-origin"
+    Cross-Origin-Embedder-Policy = "unsafe-none"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=(), payment=(), usb=(), magnetometer=(), gyroscope=(), accelerometer=(), ambient-light-sensor=(), autoplay=(), encrypted-media=(), execution-while-not-rendered=(), execution-while-out-of-viewport=(), fullscreen=(), picture-in-picture=(), publickey-credentials-get=(), screen-wake-lock=(), sync-xhr=(), web-share=(), xr-spatial-tracking=()"
+    
+  # Content Security Policy is generated dynamically in middleware with per-request nonce
+
+# API Routes Security
+[[headers]]
+  for = "/api/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    X-XSS-Protection = "1; mode=block"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
+    Cross-Origin-Resource-Policy = "same-origin"
+    Cross-Origin-Opener-Policy = "same-origin"
+    Cross-Origin-Embedder-Policy = "unsafe-none"
+    Content-Security-Policy = "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self' https:; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'"
+
+# Static Assets Security
+[[headers]]
+  for = "*.js"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "*.css"
+  [headers.values]
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+
+    X-Content-Type-Options = "nosniff"
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "*.png"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "*.jpg"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "*.ico"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Security for Web3 specific files
+[[headers]]
+  for = "*.json"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Content-Type = "application/json"
+
+# Redirects for security
+[[redirects]]
+  from = "/.well-known/security.txt"
+  to = "/security.txt"
+  status = 200
+
+[[redirects]]
+  from = "/robots.txt"
+  to = "/robots.txt"
+  status = 200
+
+# Block dangerous file types
+[[redirects]]
+  from = "/*.php"
+  to = "/404"
+  status = 404
+
+[[redirects]]
+  from = "/*.asp"
+  to = "/404"
+  status = 404
+
+[[redirects]]
+  from = "/*.aspx"
+  to = "/404"
+  status = 404
+
+[[redirects]]
+  from = "/*.jsp"
+  to = "/404"
+  status = 404
+
+
+[[headers]]
+  for = "*.mp3"
+  [headers.values]
+    Content-Type = "audio/mpeg"
+    Cache-Control = "public, max-age=31536000, immutable"
+
+
