@@ -1,10 +1,7 @@
 name: CI - build & audit
 
 on:
-  push:
-    branches: [ netlify-deploy-automation ]
-  pull_request:
-    branches: [ netlify-deploy-automation ]
+  workflow_dispatch: {}
 
 jobs:
   build:
